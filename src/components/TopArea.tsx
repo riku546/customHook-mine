@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
-import type { LevelType } from '../components/useGame';
+import type { LevelType } from './useGame';
 interface Props {
   createBoard: (height: number, width: number) => void;
 

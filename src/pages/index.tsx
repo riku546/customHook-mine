@@ -1,7 +1,7 @@
-import Board from './Board';
+import Board from '../components/Board';
 import useGame from '../components/useGame';
 
-import TopArea from './TopArea';
+import TopArea from '../components/TopArea';
 
 const Home = () => {
   const {
