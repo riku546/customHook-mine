@@ -117,7 +117,7 @@ const useGame = () => {
 
     if (checkList.length === 0) {
       const board: number[][] = structuredClone(countBombBoard);
-      while (true) {
+      while (!board.flat().some(cell => cell === 1000)) {
         const Rowrandom = Math.floor(Math.random() * levelInfo.height);
         const Cellrandom = Math.floor(Math.random() * levelInfo.width);
         if (countBombBoard[Rowrandom][Cellrandom] !== 11) {
@@ -129,7 +129,7 @@ const useGame = () => {
       setCountBombBoard(board);
       setIsTimerActive(false);
     }
-  }, [userInputs]);
+  }, [userInputs , countBombBoard , levelInfo]);
 
   //タイマー処理
   useEffect(() => {
