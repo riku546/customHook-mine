@@ -1,15 +1,21 @@
 import React from 'react';
 import styles from './index.module.css';
-import type { LevelType } from '../fuctions/useGame';
+import type { LevelType } from '../components/useGame';
 interface Props {
   createBoard: (height: number, width: number) => void;
 
   levelInfo: { height: number; width: number; NumBomb: number; customMode: boolean };
   setLevelInfo: ({ height, width, NumBomb, customMode }: LevelType) => void;
-  setIsTimerActive:(isTimerActive:boolean) => void;
-  setTimeCount:(timeCount:number) => void;
+  setIsTimerActive: (isTimerActive: boolean) => void;
+  setTimeCount: (timeCount: number) => void;
 }
-const TopArea: React.FC<Props> = ({ createBoard,  levelInfo, setLevelInfo , setIsTimerActive , setTimeCount }) => {
+const TopArea: React.FC<Props> = ({
+  createBoard,
+  levelInfo,
+  setLevelInfo,
+  setIsTimerActive,
+  setTimeCount,
+}) => {
   return (
     <div>
       <div>
@@ -26,8 +32,8 @@ const TopArea: React.FC<Props> = ({ createBoard,  levelInfo, setLevelInfo , setI
             onClick={() => {
               createBoard(9, 9),
                 setLevelInfo({ height: 9, width: 9, NumBomb: 10, customMode: false });
-                setIsTimerActive(false);
-                setTimeCount(0);
+              setIsTimerActive(false);
+              setTimeCount(0);
             }}
           >
             beginner
@@ -36,8 +42,8 @@ const TopArea: React.FC<Props> = ({ createBoard,  levelInfo, setLevelInfo , setI
             onClick={() => {
               createBoard(16, 16),
                 setLevelInfo({ height: 16, width: 16, NumBomb: 40, customMode: false });
-                setIsTimerActive(false);
-                setTimeCount(0);
+              setIsTimerActive(false);
+              setTimeCount(0);
             }}
           >
             intermediate
@@ -46,8 +52,8 @@ const TopArea: React.FC<Props> = ({ createBoard,  levelInfo, setLevelInfo , setI
             onClick={() => {
               createBoard(16, 30),
                 setLevelInfo({ height: 16, width: 30, NumBomb: 99, customMode: false });
-                setIsTimerActive(false);
-                setTimeCount(0);
+              setIsTimerActive(false);
+              setTimeCount(0);
             }}
           >
             advanced
@@ -56,8 +62,8 @@ const TopArea: React.FC<Props> = ({ createBoard,  levelInfo, setLevelInfo , setI
             onClick={() => {
               createBoard(30, 30),
                 setLevelInfo({ height: 30, width: 30, NumBomb: 80, customMode: true });
-                setIsTimerActive(false);
-                setTimeCount(0);
+              setIsTimerActive(false);
+              setTimeCount(0);
             }}
           >
             custom

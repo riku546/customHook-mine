@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import openEmptySquare from './openEmpty';
-import initializeBoard from './Initialize';
-import checkClear from './checkClear';
+import openEmptySquare from '../fuctions/openEmpty';
+import initializeBoard from '../fuctions/Initialize';
+import checkClear from '../fuctions/checkClear';
 
 export interface LevelType {
   height: number;
@@ -104,7 +104,6 @@ const useGame = () => {
 
     const newBoard = structuredClone(board);
 
-
     setTimeCount(0);
     setIsTimerActive(false);
 
@@ -146,13 +145,13 @@ const useGame = () => {
     };
   }, [isTimerActive]);
 
-//クリック処理
+  //クリック処理
   const clickHandler = (rowIndex: number, cellIndex: number) => {
     const isFirstClick = countBombBoard.flat().every((cell) => cell === 0);
     const newUserInputs = structuredClone(userInputs);
     const isGameFinish = newUserInputs.flat().some((cell) => cell === 11);
     const isCleared = countBombBoard.flat().some((cell) => cell === 1000);
-    console.log(countBombBoard)
+    console.log(countBombBoard);
     if (newUserInputs[rowIndex][cellIndex] === 10 || isGameFinish === true || isCleared) {
       return;
     }
@@ -235,7 +234,7 @@ const useGame = () => {
     clickHandler,
     setIsTimerActive,
     RightClick,
-    setTimeCount
+    setTimeCount,
   };
 };
 

@@ -1,5 +1,5 @@
 import Board from './Board';
-import useGame from '../fuctions/useGame';
+import useGame from '../components/useGame';
 
 import TopArea from './TopArea';
 
@@ -15,7 +15,7 @@ const Home = () => {
     clickHandler,
     setIsTimerActive,
     RightClick,
-    setTimeCount
+    setTimeCount,
   } = useGame();
   return (
     <>
@@ -25,7 +25,6 @@ const Home = () => {
         setLevelInfo={setLevelInfo}
         setIsTimerActive={setIsTimerActive}
         setTimeCount={setTimeCount}
-
       />
       <Board
         resetState={resetState}
@@ -33,7 +32,7 @@ const Home = () => {
         userInputs={userInputs}
         countBombBoard={countBombBoard}
         timeCount={timeCount}
-        clickHandler = {clickHandler}
+        clickHandler={clickHandler}
         setIsTimerActive={setIsTimerActive}
         RightClick={RightClick}
       />
