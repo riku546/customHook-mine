@@ -40,7 +40,8 @@ const Board: React.FC<BoardType> = ({
               </div>
 
               <div className={styles.resetButtonStyle}>
-                {countBombBoard.flat().some((cell) => cell === 1000) ? (
+                {}
+                {levelInfo.NumBomb - userInputs.flat().filter((cell) => cell === 0).length === 0 ? (
                   <div
                     className={styles.restartButton}
                     style={{

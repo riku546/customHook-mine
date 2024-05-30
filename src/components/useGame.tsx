@@ -114,22 +114,23 @@ const useGame = () => {
   //クリア判定
   useEffect(() => {
     const checkList = checkClear(countBombBoard, userInputs);
+    // const board: number[][] = structuredClone(countBombBoard);
 
     if (checkList.length === 0) {
-      const board: number[][] = structuredClone(countBombBoard);
-      while (!board.flat().some((cell) => cell === 1000)) {
-        const Rowrandom = Math.floor(Math.random() * levelInfo.height);
-        const Cellrandom = Math.floor(Math.random() * levelInfo.width);
-        if (countBombBoard[Rowrandom][Cellrandom] !== 11) {
-          board[Rowrandom][Cellrandom] = 1000;
-          break;
-        }
-      }
+      // console.log('ff');
+      // while (!board.flat().some((cell) => cell === 1000)) {
+      //   const Rowrandom = Math.floor(Math.random() * 9);
+      //   const Cellrandom = Math.floor(Math.random() * 9);
+      //   if (board[Rowrandom][Cellrandom] !== 11) {
+      //     board[Rowrandom][Cellrandom] = 1000;
+      //     break;
+      //   }
+      // }
 
-      setCountBombBoard(board);
+      // setCountBombBoard(board);
       setIsTimerActive(false);
     }
-  }, [userInputs, countBombBoard, levelInfo]);
+  }, [userInputs , countBombBoard]);
 
   //タイマー処理
   useEffect(() => {
