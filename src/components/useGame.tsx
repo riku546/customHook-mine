@@ -130,7 +130,7 @@ const useGame = () => {
       // setCountBombBoard(board);
       setIsTimerActive(false);
     }
-  }, [userInputs , countBombBoard]);
+  }, [userInputs, countBombBoard]);
 
   //タイマー処理
   useEffect(() => {
