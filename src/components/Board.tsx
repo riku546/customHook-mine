@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.css';
+import styles from '../pages/index.module.css';
 
 interface BoardType {
   resetState: () => void;
